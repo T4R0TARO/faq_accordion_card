@@ -1,4 +1,234 @@
+/* Custom Variables */
 
+:root 
+{
+    --text-blue: hsl(238, 29%, 16%);
+    --text-red: hsl(14, 88%, 65%);
+    --text-dkblue:hsl(240, 6%, 50%); 
+    --text-xdkblue:hsl(237, 12%, 33%);
+    --gradient-violet:hsl(273, 75%, 66%);
+    --gradient-blue:hsl(240, 73%, 65%); 
+    --divider-blue:hsl(240, 5%, 91%); 
+}
+
+/* Base Styles */
+
+html 
+{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after 
+{
+    box-sizing: inherit;
+}
+
+body 
+{ 
+    min-height: 100vh;
+    margin: 0;
+    padding: 10rem 1rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(
+        var(--gradient-violet), 
+        var(--gradient-blue)
+    );
+    color: var(--text-blue);
+}
+
+/* Card Styles */
+
+/* Gives all headers 0 spacing above it for appearance */
+h1,
+h2,
+h3 
+{
+    margin-top: 0;
+}
+
+/* Controls the card style */
+.card 
+{
+    background: #fff;
+    border-radius: 2rem;
+    max-width: 56rem;
+    padding: 2.875em 1.5rem;
+    background-image: url('images/bg-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center 0%;
+    background-size: 15rem;
+}
+
+/* changes the layer of of the element */
+.card__image 
+{
+    position: relative;
+}
+
+/* changes the img styles and position */
+.card__image img 
+{
+    position: absolute;
+    top: -6.8rem;
+    left: 50%;
+    transform: translateX(-50%)translateY(-44%);
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 15rem;
+    margin: auto;
+    
+}
+
+/* changes the img styles and position */
+.card__box 
+{
+    display: block;
+    margin: auto;
+    transform: translateX(-83px)translateY(-95%);
+    z-index: 1;
+    position: relative;
+    max-width: 3.44rem;
+}
+
+/* Accordion Text Styles */
+
+/* Control the text styles of the accordion */
+.card__text 
+{
+    padding-top: 2.19rem;
+}
+.card__text h1 
+{
+    text-align: center;
+}
+
+.accordion__item 
+{
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--divider-blue);
+}
+
+.accordion__item h2 
+{
+    margin-bottom: 0;
+}
+
+.accordion__question 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 0.875rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    margin-bottom: 1rem;
+}
+
+/* Makes the font bold when accordion button is open */
+.accordion__question.open 
+{
+    font-weight: 700;
+}
+
+.accordion__question::after 
+{
+    content: '';
+    display: block;
+    width: 0.625rem;
+    height: 1rem;
+    background-image: url('/images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.accordion__content 
+{
+    font-size: 0.75rem;
+    line-height: 1.4;
+    border-bottom: 1px solid var(--divider-blue);
+} 
+
+/* Media Querey */
+
+/* Changes page layout from mobile to desktop styles when the width of the browser is 
+at least 56em or 896px  */
+
+@media (min-width: 56em)
+{
+    body 
+    {
+        padding: 5rem;
+    }
+    .card 
+    {
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        background-image: url('images/bg-pattern-desktop.svg');
+        background-size: 45%;
+        background-repeat: no-repeat;
+        background-position: -13% center;
+        padding: 4.375rem 6.25rem 4.375rem 0;
+    }
+
+    .card__box 
+    {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateX(-50%) translateY(-35%);
+        z-index: 1;
+        max-width: 11.5rem;
+    }
+
+    .card__text h1 
+    {
+        text-align: left;
+    }
+
+/* Sets a flex value of 1 to both elements giving them equal priority to be place 
+side by side */
+    
+    .card__image, 
+    .card__text 
+    {
+        flex: 1;
+    }
+
+
+
+/* Targets the img so that the content that spills out of the card element is cutout
+or hidden by using the overflow property */
+    .card__image 
+    {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+/* Targets and isolates the img within the card__img div
+    Then using the transform property re-positions the element
+    on the horizontal x-axis to peak out of the card */
+    
+
+    .card__image img 
+    {
+        position:relative;
+        top: auto;
+        left: 0%;
+        max-width: 25rem;
+        transform: translateX(-4rem)
+    }
+
+}
 
 /* Main Footer */
 .attribution 
