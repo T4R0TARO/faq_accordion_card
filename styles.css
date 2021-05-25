@@ -104,19 +104,20 @@ h3
     text-align: center;
 }
 
-.accordion__item 
-{
+.accordion__item {
     padding-top: 1rem;
     border-bottom: 1px solid var(--divider-blue);
+    background-image: url('/images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    
 }
 
-.accordion__item h2 
-{
+.accordion__item h2 {
     margin-bottom: 0;
 }
 
-.accordion__question 
-{
+.accordion__question {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,117 +129,108 @@ h3
     font-size: 0.875rem;
     font-family: 'Kumbh Sans', sans-serif;
     margin-bottom: 1rem;
+    background-repeat: no-repeat;
 }
+
 
 /* Makes the font bold when accordion button is open */
-.accordion__question.open 
-{
-    font-weight: 700;
+ .accordion__question:hover {
+    font-weight: 600;
 }
 
-.accordion__question::after 
-{
-    content: '';
-    display: block;
-    width: 0.625rem;
-    height: 1rem;
-    background-image: url('/images/icon-arrow-down.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+.accordion__collapse {
+    display: none;
 }
-
-.accordion__content 
-{
-    font-size: 0.75rem;
-    line-height: 1.4;
-    border-bottom: 1px solid var(--divider-blue);
+.accordion__content {
+display: none;
+font-size: 0.75rem;
+line-height: 1.4;
+border-bottom: 1px solid var(--divider-blue);
 } 
 
-/* Media Querey */
+.active, .accordion__content {
+display: block;
+overflow: hidden;
+}
+
+/* ================================
+Media Querey
+====================================*/
 
 /* Changes page layout from mobile to desktop styles when the width of the browser is 
 at least 56em or 896px  */
 
-@media (min-width: 56em)
-{
-    body 
-    {
-        padding: 5rem;
-    }
-    .card 
-    {
-        position: relative;
-        display: flex;
-        margin: 0 auto;
-        background-image: url('images/bg-pattern-desktop.svg');
-        background-size: 45%;
-        background-repeat: no-repeat;
-        background-position: -13% center;
-        padding: 4.375rem 6.25rem 4.375rem 0;
-    }
+@media (min-width: 56em){
+body {
+    padding: 5rem;
+}
+.card {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: -13% center;
+    padding: 4.375rem 6.25rem 4.375rem 0;
+}
 
-    .card__box 
-    {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateX(-50%) translateY(-35%);
-        z-index: 1;
-        max-width: 11.5rem;
-    }
+.card__box {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-35%);
+    z-index: 1;
+    max-width: 11.5rem;
+}
 
-    .card__text h1 
-    {
-        text-align: left;
-    }
+.card__text h1 {
+    text-align: left;
+}
 
 /* Sets a flex value of 1 to both elements giving them equal priority to be place 
 side by side */
-    
-    .card__image, 
-    .card__text 
-    {
-        flex: 1;
-    }
+
+.card__image, 
+.card__text {
+    flex: 1;
+}
 
 
 
 /* Targets the img so that the content that spills out of the card element is cutout
 or hidden by using the overflow property */
-    .card__image 
-    {
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-    }
-    
+.card__image {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
 /* Targets and isolates the img within the card__img div
-    Then using the transform property re-positions the element
-    on the horizontal x-axis to peak out of the card */
-    
+Then using the transform property re-positions the element
+on the horizontal x-axis to peak out of the card */
 
-    .card__image img 
-    {
-        position:relative;
-        top: auto;
-        left: 0%;
-        max-width: 25rem;
-        transform: translateX(-4rem)
-    }
+
+.card__image img {
+    position:relative;
+    top: auto;
+    left: 0%;
+    max-width: 25rem;
+    transform: translateX(-4rem)
+}
 
 }
 
-/* Main Footer */
-.attribution 
-{ 
-    left: 0;
-    bottom: 0;
-    font-size: 11px; 
-    text-align: center; 
+/*  Main Footer */
+.attribution {
+position: absolute;
+bottom: 0;
+right: 0;
+font-size: 11px;
+text-align: center;
 }
-.attribution a 
-{ 
-    color: hsl(228, 45%, 44%); 
-}
+
+.attribution a {
+color: hsl(49, 45%, 44%)
+};
