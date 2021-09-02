@@ -107,10 +107,14 @@ h3
 .accordion__item {
     padding-top: 1rem;
     border-bottom: 1px solid var(--divider-blue);
-    background-image: url('/images/icon-arrow-down.svg');
+    /* background-image: url('/images/icon-arrow-down.svg'); */
     background-repeat: no-repeat;
     background-position: right;
-    
+}
+
+
+.arrowDownIcon {
+    float: right;
 }
 
 .accordion__item h2 {
@@ -136,6 +140,7 @@ h3
 /* Makes the font bold when accordion button is open */
  .accordion__question:hover {
     font-weight: 600;
+    cursor: pointer;
 }
 
 .accordion__collapse {
