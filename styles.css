@@ -229,7 +229,7 @@ on the horizontal x-axis to peak out of the card */
 
 /*  Main Footer */
 .attribution {
-position: absolute;
+position: sticky;
 bottom: 0;
 right: 0;
 font-size: 11px;
